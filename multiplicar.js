@@ -3,56 +3,37 @@ const colors = require('colors');
 
 
 
+function factorial (n) {
+    var total = 1; 
+    for (i=1; i<=n; i++) {
+        total = total * i; 
+    }
+    return total; 
+}
+///Funcion de ImprimirUnaFactorizacion
+function imprimirfactorizacion(numerofactorizado){
+var numeros=!${numerofactorizado} = ;
 
+for (var i = 1; i <= numerofactorizado; i++) {
+    if(i!=numerofactorizado)
+    numeros+=i+' X ';
+    else
+    numeros+=i+ = ${factorial(numerofactorizado)};
+ 
+}
+return numeros;
+}
+///Funcion de Imprimir la tabla entera de factorizacion
+function imprimirTabla(limitenumeros){
+    console.log(TABLA DE FACTORIAL DE LIMITE ${limitenumeros})
+    for (var i = 1; i <= limitenumeros; i++) {
 
-let listarTabla = (base, limite = 10) => {
-
-    console.log('==================='.green);
-    console.log(`tabla de ${ base } `.green);
-    console.l
-    og('==================='.green);
-
-
-
-    for (let i = 0; i <= limite; i++) {
-        console.log(`${base} *  ${i} = ${ base * i}\n`);;
+        console.log(imprimirfactorizacion(i));
 
     }
-
 }
+//
 
-
-
-
-let crearArchivo = (base, limite = 10) => {
-    return new Promise((resolve, reject) => {
-
-        if (!Number(base)) {
-            reject(`El valor introducido ${base} no es un numero`);
-            return;
-        }
-
-        let data = '';
-
-
-        for (let i = 0; i <= limite; i++) {
-            data += `${base} *  ${i} = ${ base * i}\n`;
-
-        }
-
-
-        fs.writeFile(`tablas/tabla-${base}-al- ${limite}.txt `, data, (err) => {
-            if (err)
-                reject(err);
-            else
-                resolve(`tabla - ${base}-al- ${limite}.txt`);
-        });
-    })
-}
-
-
-module.exports = {
-    crearArchivo,
-    listarTabla
-
-}
+    console.log(imprimirTabla(8));
+  //console.log(imprimirfactorizacion(5))
+   // console.log(!${numero} = =1)
